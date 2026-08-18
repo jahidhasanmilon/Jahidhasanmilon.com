@@ -1,0 +1,199 @@
+/* ══════════════════════════════
+   PROJECT SECTIONS (Rubalif / VisaTrack)
+══════════════════════════════ */
+.sp-section {
+  width: 100vw;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  background: #f5f3f0;
+  margin-left: calc(-50vw + 50%);
+  padding: 2.5rem 80px;
+  font-family: 'DM Sans', sans-serif;
+  color: #1a202c;
+}
+
+.sp-section-inner {
+  width: 100%;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* ── LEFT ── */
+.sp-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sp-eyebrow {
+  font: 500 11px/1 'DM Sans', sans-serif;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #8a9ab0;
+  margin: 0 0 29px;
+}
+
+.sp-headline {
+  font: 400 64px/1.05 'DM Serif Display', serif;
+  color: #1a202c;
+  letter-spacing: -1.5px;
+  max-width: 600px;
+  margin: 0 0 42px;
+}
+
+.sp-body {
+  font: 400 17px/1.75 'DM Sans', sans-serif;
+  color: #4a5568;
+  max-width: 520px;
+  margin: 0 0 42px;
+}
+
+.sp-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: #1a202c;
+  color: #f5f3f0;
+  font: 500 15px/1 'DM Sans', sans-serif;
+  text-decoration: none;
+  border: 2px solid #1a202c;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: #8b0000; border-color: #8b0000; color: #f5f3f0; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  background: transparent;
+  color: #1a202c;
+  font: 500 15px/1 'DM Sans', sans-serif;
+  text-decoration: none;
+  border: 2px solid rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.btn-secondary:hover { border-color: #8b0000; color: #8b0000; }
+
+/* ── RIGHT ── */
+.sp-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sp-card {
+  background: #;
+  border: 1px solid rgba(0,0,0,0.09);
+  box-shadow: 0 6px 32px rgba(0,0,0,0.07);
+  padding: 40px 40px 32px;
+}
+
+.sp-logo-box { margin-bottom: 36px; }
+
+.sp-logo-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  padding: 8px;
+}
+
+.sp-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(0,0,0,0.09);
+}
+
+.sp-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.sp-row:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+.sp-label {
+  font: 500 10.5px/1 'DM Sans', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8a9ab0;
+}
+
+.sp-value {
+  font: 500 15px/1 'DM Sans', sans-serif;
+  color: #1a202c;
+  text-align: right;
+}
+
+/* Website link row */
+.sp-link-row {
+  padding-top: 24px;
+}
+
+.sp-site-link {
+  font: 400 15px/1 'DM Sans', sans-serif;
+  color: #1a202c;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.sp-site-link:hover { color: #8b0000; }
+
+.sp-site-link::after {
+  content: '↗';
+  font-size: 13px;
+}
+
+/* ── VISATRACK OVERRIDES (scoped, so it doesn't affect Rubalif) ── */
+#visatrack .btn-primary:hover { background: #6C5CE7; border-color: #6C5CE7; color: #f5f3f0; }
+#visatrack .btn-secondary:hover { border-color: #6C5CE7; color: #6C5CE7; }
+#visatrack .sp-site-link:hover { color: #6C5CE7; }
+
+.sp-logo-mark {
+  width: 180px;
+  height: 180px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #F5A524, #FFCB74);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1150px) {
+  .sp-section { min-height: auto; }
+}
+@media (max-width: 900px) {
+  .sp-section { min-height: auto; padding: 48px 32px; }
+  .sp-section-inner { grid-template-columns: 1fr; gap: 32px; }
+  .sp-headline { font-size: 44px; }
+}
+@media (max-width: 500px) {
+  .sp-section { padding: 32px 20px; }
+  .sp-section-inner { gap: 24px; }
+  .sp-headline { font-size: 34px; }
+  .btn-primary, .btn-secondary { padding: 14px 22px; font-size: 14px; }
+  .sp-card { padding: 24px 20px; }
+  .sp-body { font-size: 14px; }
+  .sp-eyebrow { font-size: 9px; }
+}

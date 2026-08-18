@@ -1,0 +1,118 @@
+/* ══════════════════════════════
+   ABOUT ME
+══════════════════════════════ */
+.slide-about {
+  background: #8b0000;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.slide-about-inner {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  align-items: flex-start;
+  padding: 5rem 80px 4rem;
+  gap: 4rem;
+}
+
+.about-left {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+.about-script {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(28px, 5vw, 72px);
+  color: #fff;
+  line-height: 1;
+  margin-bottom: -2vh;
+}
+
+.about-heading {
+  font: 700 clamp(52px, 10vw, 140px)/0.88 'Oswald', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.about-body {
+  font: 700 clamp(13px, 1.4vw, 18px)/1.6 'Oswald', sans-serif;
+  color: #fff;
+  max-width: 600px;
+}
+
+.about-body p + p { margin-top: 1em; }
+
+.about-right {
+  flex: 0 0 auto;
+  width: clamp(200px, 32vw, 460px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-box {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border: 6px solid #fff;
+  overflow: hidden;
+  background: #6b0000;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #a33, #7a0000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════
+   TABLET
+══════════════════════════════ */
+@media (max-width: 900px) {
+  .slide-about-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6vh 6vw;
+    gap: 3vh;
+  }
+  .about-right {
+    width: 100%;
+    align-self: center;
+    margin: 0 auto;
+  }
+}
+
+/* ══════════════════════════════
+   MOBILE
+══════════════════════════════ */
+@media (max-width: 560px) {
+  .slide-about-inner { padding: 4vh 5vw; gap: 2vh; }
+  .about-script { font-size: clamp(24px, 8vw, 42px); }
+  .about-heading { font-size: clamp(44px, 15vw, 72px); }
+  .about-body { font-size: clamp(12px, 3.2vw, 16px); }
+  .about-right {
+    width: 100%;
+    align-self: center;
+    margin: 0 auto;
+  }
+  .photo-box { aspect-ratio: 4/5; }
+}
