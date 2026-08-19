@@ -1,8 +1,9 @@
-<!-- site favicon: bold "J" lettermark in the site's brand red, matches
-     the WEB DEV / Oswald-style headings used across the pages -->
+<!-- site favicon: bold white "J" hook-mark on a black circle, with a
+     small dot detail inside the curl -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#8b0000"/>
-  <text x="50%" y="53%" text-anchor="middle" dominant-baseline="middle"
-        font-family="Georgia, 'Times New Roman', serif" font-weight="700"
-        font-size="40" fill="#ffffff">J</text>
+  <circle cx="32" cy="32" r="32" fill="#000000"/>
+  <path d="M36 14 V36 C36 46 27 49 21 42"
+        fill="none" stroke="#ffffff" stroke-width="9"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="23" cy="43.5" r="2.8" fill="#000000"/>
 </svg>
