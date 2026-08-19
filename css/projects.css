@@ -97,7 +97,9 @@
 }
 
 .sp-card {
-  background: #;
+  /* same color as the section background, so the card reads as a subtle
+     bordered panel rather than a separate white box */
+  background: #f5f3f0;
   border: 1px solid rgba(0,0,0,0.09);
   box-shadow: 0 6px 32px rgba(0,0,0,0.07);
   padding: 40px 40px 32px;
@@ -250,7 +252,6 @@
   .sp-section { padding: 32px 20px; }
   .sp-section-inner { gap: 24px; }
   .sp-headline { font-size: 30px; }
-  .btn-primary, .btn-secondary { padding: 14px 22px; font-size: 14px; }
   .sp-card { padding: 24px 20px; }
   .sp-body { font-size: 14px; }
   .sp-eyebrow { font-size: 9px; }
@@ -258,5 +259,5 @@
   .sp-cover-badge { font-size: 11px; padding: 5px 10px 5px 5px; left: 10px; bottom: 10px; }
   /* only stack buttons full-width on small phones, where side-by-side text would get too cramped */
   .sp-buttons { flex-direction: column; }
-  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 14px 22px; font-size: 14px; }
 }

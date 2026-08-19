@@ -1,29 +1,36 @@
+// Navbar behavior shared by every page: hamburger toggle, closing the
+// mobile menu after a link click, and mobile submenu open/close.
 (function() {
-  var toggle = document.getElementById('navToggle');
-  var nav    = document.getElementById('navbar');
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('navbar');
 
-  toggle.addEventListener('click', function() {
+  // open/close the mobile slide-out menu
+  toggle.addEventListener('click', () => {
     toggle.classList.toggle('open');
     nav.classList.toggle('open');
   });
 
-  nav.querySelectorAll('li:not(.has-submenu) a').forEach(function(a) {
-    a.addEventListener('click', function() {
+  // clicking a plain nav link (not one with a submenu) closes the mobile menu
+  nav.querySelectorAll('li:not(.has-submenu) a').forEach((a) => {
+    a.addEventListener('click', () => {
       toggle.classList.remove('open');
       nav.classList.remove('open');
     });
   });
 
-  document.querySelectorAll('.has-submenu > a').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      var isMobile = window.innerWidth <= 768;
+  // on mobile, tapping a "Work"/"Projects"-style link toggles its submenu
+  // instead of navigating (desktop still uses the CSS :hover submenu)
+  document.querySelectorAll('.has-submenu > a').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const isMobile = window.innerWidth <= 768;
       if (!isMobile) return;
 
       e.preventDefault();
-      var li = a.parentElement;
-      var isOpen = li.classList.contains('open');
+      const li = a.parentElement;
+      const isOpen = li.classList.contains('open');
 
-      document.querySelectorAll('.has-submenu').forEach(function(other) {
+      // only one submenu open at a time
+      document.querySelectorAll('.has-submenu').forEach((other) => {
         if (other !== li) other.classList.remove('open');
       });
 
@@ -31,9 +38,10 @@
     });
   });
 
-  document.addEventListener('click', function(e) {
+  // tapping/clicking anywhere outside the navbar closes any open submenu
+  document.addEventListener('click', (e) => {
     if (!e.target.closest('.has-submenu') && !e.target.closest('.navbar')) {
-      document.querySelectorAll('.has-submenu').forEach(function(li) {
+      document.querySelectorAll('.has-submenu').forEach((li) => {
         li.classList.remove('open');
       });
     }
