@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- lists every page so search engines can discover them without crawling links -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jahidhasanmilon.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jahidhasanmilon.com/rubalif</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jahidhasanmilon.com/visatrack</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jahidhasanmilon.com/contact</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>

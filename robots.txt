@@ -1,0 +1,5 @@
+# allow all search engine crawlers to index the whole site
+User-agent: *
+Allow: /
+
+Sitemap: https://jahidhasanmilon.com/sitemap.xml
