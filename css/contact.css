@@ -222,7 +222,7 @@ a.contact-text:hover { color: var(--crimson-light); }
     margin-bottom: 1.8rem;
   }
   .photo-frame {
-    width: clamp(200px, 30vw, 300px);
+    width: clamp(240px, 42vw, 320px);
     box-shadow: 4px 4px 0 var(--crimson);
   }
 
