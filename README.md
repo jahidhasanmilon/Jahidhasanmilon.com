@@ -19,6 +19,9 @@ jahid-portfolio/
 ├── js/
 │   ├── navbar.js       ← সব page-এ common: hamburger + submenu logic
 │   └── hero.js         ← শুধু index.html-এ: WEB DEV text scale animation
+├── images/             ← site-এর নিজস্ব photo/logo (আর WordPress-এর উপর নির্ভর করে না)
+│   ├── jahid-hasan-milon.jpg
+│   └── rubalif-logo.png
 └── README.md
 ```
 
@@ -59,7 +62,7 @@ npx serve .
 
 ## Photo Replace করতে
 
-প্রতিটা HTML file-এ যেখানে `src="https://jahidhasanmilon.com/wp-content/uploads/..."` আছে সেখানে নিজের photo URL দাও।
+Photo গুলো এখন `images/` ফোল্ডারে local ভাবে রাখা (আগে WordPress-এর `wp-content/uploads` থেকে load হতো — domain Vercel-এ move করলে সেই path আর কাজ করতো না বলে এখানে সরিয়ে আনা হয়েছে)। নতুন photo বসাতে `images/` ফোল্ডারে file রেখে HTML-এর `<img src="images/...">` path আপডেট করো।
 
 ## WordPress এ Add করতে
 
