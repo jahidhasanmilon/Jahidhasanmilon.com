@@ -103,7 +103,8 @@
   .page {
     min-height: unset;
     justify-content: flex-start;
-    padding: 34px 10px 2px;
+    /* even margin on all sides so content doesn't touch the screen edges */
+    padding: 36px 24px 32px;
     gap: 2px;
   }
 

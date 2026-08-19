@@ -1,10 +1,11 @@
 function scaleBig() {
   const el = document.getElementById('bigTitle');
   if (!el) return;
-  const padding = window.innerWidth <= 600 ? 56 : window.innerWidth <= 900 ? 96 : 144;
-  const avail = el.parentElement.clientWidth - padding;
-  const prev = parseFloat(el.style.transform?.match(/scaleX\((.+)\)/)?.[1]) || 1;
-  const w = el.scrollWidth / prev;
+  el.style.transform = 'none';
+  const parentStyle = getComputedStyle(el.parentElement);
+  const horizontalPadding = parseFloat(parentStyle.paddingLeft) + parseFloat(parentStyle.paddingRight);
+  const avail = el.parentElement.clientWidth - horizontalPadding;
+  const w = el.scrollWidth;
   if (w > 0) el.style.transform = `scaleX(${Math.min(avail / w, 1.25)})`;
 }
 
@@ -14,5 +15,11 @@ function runAnims() {
   });
 }
 
-window.addEventListener('load', () => { scaleBig(); runAnims(); });
+function init() {
+  scaleBig();
+  runAnims();
+}
+
+window.addEventListener('load', init);
+if (document.fonts) document.fonts.ready.then(scaleBig);
 window.addEventListener('resize', scaleBig);

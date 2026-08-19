@@ -103,15 +103,80 @@
   padding: 40px 40px 32px;
 }
 
-.sp-logo-box { margin-bottom: 36px; }
+/* ── COVER BANNER ──
+   Big brand visual at the top of the card (see .sp-cover markup inside
+   .sp-card in rubalif.html / visatrack.html).
 
-.sp-logo-img {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  display: block;
-  padding: 8px;
+   No real cover photo yet, so it defaults to each project's own brand
+   color via the --cover-bg custom property, set per page further down
+   (search "#rubalif .sp-cover" / "#visatrack .sp-cover").
+
+   TO ADD A REAL COVER PHOTO LATER: on that same --cover-bg line, either
+     1) replace the color with a photo:  --cover-bg: url("your-photo.jpg") center/cover;
+     2) or add a second declaration just for background-image:
+          #rubalif .sp-cover { background-image: url("your-photo.jpg"); }
+   The color still renders underneath as an instant fallback while the
+   photo loads (or if the URL breaks), so nothing needs to be removed. */
+.sp-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  background: var(--cover-bg);
+  background-size: cover;
+  background-position: center;
 }
+
+/* the enlarged logo/icon shown centered inside the cover */
+.sp-cover-logo {
+  max-width: 45%;
+  max-height: 55%;
+  object-fit: contain;
+}
+.sp-cover-icon {
+  width: 30%;
+  max-width: 96px;
+  height: auto;
+}
+
+/* small "mini logo + name" chip pinned to the cover's bottom-left corner */
+.sp-cover-badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 6px 12px 6px 6px;
+  border-radius: 999px;
+  font: 600 12px/1 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+.sp-cover-badge img,
+.sp-cover-badge .sp-cover-badge-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sp-cover-badge .sp-cover-badge-icon svg { width: 12px; height: 12px; }
+
+/* brand color defaults — used as the cover background when no photo is set */
+#rubalif .sp-cover { --cover-bg: #8b0000; }
+#visatrack .sp-cover { --cover-bg: linear-gradient(135deg, #F5A524, #FFCB74); }
 
 .sp-divider {
   width: 100%;
@@ -168,17 +233,6 @@
 #visatrack .btn-secondary:hover { border-color: #6C5CE7; color: #6C5CE7; }
 #visatrack .sp-site-link:hover { color: #6C5CE7; }
 
-.sp-logo-mark {
-  width: 180px;
-  height: 180px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #F5A524, #FFCB74);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 1150px) {
   .sp-section { min-height: auto; }
@@ -186,14 +240,23 @@
 @media (max-width: 900px) {
   .sp-section { min-height: auto; padding: 48px 32px; }
   .sp-section-inner { grid-template-columns: 1fr; gap: 32px; }
-  .sp-headline { font-size: 44px; }
+  .sp-headline { font-size: 38px; }
+  .sp-body { font-size: 15px; }
+  .sp-cover { max-height: 200px; margin-bottom: 24px; }
+  /* buttons stay side-by-side on tablet (more compact, matches design ref);
+     they only stack full-width on small phones, see the 500px query below */
 }
 @media (max-width: 500px) {
   .sp-section { padding: 32px 20px; }
   .sp-section-inner { gap: 24px; }
-  .sp-headline { font-size: 34px; }
+  .sp-headline { font-size: 30px; }
   .btn-primary, .btn-secondary { padding: 14px 22px; font-size: 14px; }
   .sp-card { padding: 24px 20px; }
   .sp-body { font-size: 14px; }
   .sp-eyebrow { font-size: 9px; }
+  .sp-cover { max-height: 160px; margin-bottom: 18px; }
+  .sp-cover-badge { font-size: 11px; padding: 5px 10px 5px 5px; left: 10px; bottom: 10px; }
+  /* only stack buttons full-width on small phones, where side-by-side text would get too cramped */
+  .sp-buttons { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
 }
