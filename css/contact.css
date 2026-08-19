@@ -212,17 +212,19 @@ a.contact-text:hover { color: var(--crimson-light); }
     align-items: flex-start;
   }
 
-  /* On mobile: photo + thank-you go on TOP */
+  /* On mobile: photo + thank-you sit below the contact list */
   .right {
     order: 10;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
     align-self: auto;
+    /* pull the photo block up, closer to the contact list above it */
+    margin-top: -0.75rem;
     margin-bottom: 1.8rem;
   }
   .photo-frame {
-    width: clamp(240px, 42vw, 320px);
+    width: clamp(280px, 55vw, 360px);
     box-shadow: 4px 4px 0 var(--crimson);
   }
 
