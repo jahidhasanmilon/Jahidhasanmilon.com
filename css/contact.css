@@ -220,7 +220,7 @@ a.contact-text:hover { color: var(--crimson-light); }
     justify-content: space-between;
     align-self: auto;
     /* pull the photo block up, closer to the contact list above it */
-    margin-top: -0.75rem;
+    margin-top: -1rem;
     margin-bottom: 1.8rem;
   }
   .photo-frame {
