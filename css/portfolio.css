@@ -1,0 +1,111 @@
+/* ══════════════════════════════
+   PORTFOLIO OVERVIEW — short cards for every project, linking to the
+   full project page (Rubalif, VisaTrack). Sits between About Me and the
+   "How it all started" mosaic on the Home page.
+══════════════════════════════ */
+#portfolio {
+  background: #f5f3f0;
+  padding: 5rem 80px;
+}
+
+.portfolio-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.portfolio-eyebrow {
+  font: 500 11px/1 'DM Sans', sans-serif;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #8a9ab0;
+  margin: 0 0 12px;
+}
+
+.portfolio-heading {
+  font: 700 clamp(28px, 4vw, 44px)/1.15 'Oswald', sans-serif;
+  color: #1a202c;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin: 0 0 40px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* each project card — plain <a> so the whole tile is clickable */
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.portfolio-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.portfolio-card-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+.portfolio-card h3 {
+  font: 700 20px/1.2 'DM Sans', sans-serif;
+  color: #1a202c;
+  margin: 0 0 8px;
+}
+
+.portfolio-card p {
+  font: 400 14.5px/1.6 'DM Sans', sans-serif;
+  color: #4a5568;
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+
+.portfolio-card-link {
+  font: 600 13.5px/1 'DM Sans', sans-serif;
+  color: #8b0000;
+}
+
+/* Trackly isn't built yet, so its card isn't a link — just a preview */
+.portfolio-card--soon {
+  cursor: default;
+  opacity: 0.7;
+}
+.portfolio-card--soon:hover {
+  transform: none;
+  box-shadow: none;
+}
+.portfolio-card--soon .portfolio-card-link {
+  color: #8a9ab0;
+}
+
+/* ── TABLET ── */
+@media (max-width: 900px) {
+  #portfolio { padding: 3.5rem 32px; }
+  .portfolio-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 560px) {
+  #portfolio { padding: 3rem 20px; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-heading { margin-bottom: 28px; }
+}
