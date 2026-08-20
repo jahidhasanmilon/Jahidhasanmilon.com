@@ -1,9 +1,13 @@
 /* ══════════════════════════════
    "HOW IT ALL ACTUALLY STARTED" — photo mosaic
-   A bento/masonry-style grid of snapshots below About Me. Tiles are
-   currently placeholders (dashed box + number) — swap each one's content
+   A scattered bento-style grid of snapshots below About Me. Tiles are
+   placeholders for now (dashed box + number) — swap each one's content
    for a real <img> when photos are ready (see the HTML for exactly
    where each numbered tile lives).
+
+   Each .story-tile-N below gets its own hand-picked width/height span —
+   deliberately irregular (no repeating size pattern) so it reads as a
+   scattered collage rather than a uniform grid.
 ══════════════════════════════ */
 #story {
   background: #fff;
@@ -15,11 +19,10 @@
   margin: 0 auto;
 }
 
-/* fixed-height row unit; each tile spans however many rows/columns it needs */
 .story-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 110px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: 70px;
   gap: 12px;
 }
 
@@ -45,40 +48,59 @@
   display: block;
 }
 
-/* size variants — mix and match on individual tiles for the mosaic look */
-.story-tile--wide  { grid-column: span 2; }
-.story-tile--tall  { grid-row: span 2; }
-.story-tile--big   { grid-column: span 3; grid-row: span 2; }
+/* hand-picked spans, each different from its neighbors on purpose */
+.story-tile-1  { grid-column: span 2; grid-row: span 3; }
+.story-tile-2  { grid-column: span 3; grid-row: span 2; }
+.story-tile-3  { grid-column: span 2; grid-row: span 4; }
+.story-tile-4  { grid-column: span 3; grid-row: span 3; }
+.story-tile-5  { grid-column: span 2; grid-row: span 2; }
+.story-tile-6  { grid-column: span 4; grid-row: span 2; }
+.story-tile-7  { grid-column: span 3; grid-row: span 4; }
+.story-tile-8  { grid-column: span 2; grid-row: span 2; }
+.story-tile-9  { grid-column: span 3; grid-row: span 2; }
+.story-tile-10 { grid-column: span 2; grid-row: span 3; }
+.story-tile-11 { grid-column: span 4; grid-row: span 2; }
+.story-tile-12 { grid-column: span 2; grid-row: span 2; }
+.story-tile-13 { grid-column: span 3; grid-row: span 3; }
 
-/* the one tile that holds text instead of a photo */
+/* the one tile that holds the caption, styled like text overlaid on a
+   photo (dark scrim + light text) rather than a plain placeholder box */
 .story-tile--text {
-  background: #f0eeeb;
+  background: linear-gradient(160deg, #4a4744, #2a2826);
   border: none;
-  color: #8b0000;
-  font: 700 clamp(20px, 3vw, 34px)/1.25 'Oswald', sans-serif;
+  color: #fff;
+  font: 700 clamp(18px, 1.8vw, 26px)/1.3 'Oswald', sans-serif;
   text-align: center;
   padding: 20px;
 }
+.story-tile--text span { color: #ff3b30; }
 
 /* ── TABLET ── */
 @media (max-width: 900px) {
   #story { padding: 3rem 32px 4rem; }
   .story-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 90px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 60px;
   }
-  .story-tile--big { grid-column: span 4; grid-row: span 2; }
+  /* re-map the wider spans down so nothing overflows a 6-col grid */
+  .story-tile-1, .story-tile-3, .story-tile-5, .story-tile-8,
+  .story-tile-10, .story-tile-12 { grid-column: span 2; }
+  .story-tile-2, .story-tile-4, .story-tile-7, .story-tile-9,
+  .story-tile-13 { grid-column: span 3; }
+  .story-tile-6, .story-tile-11 { grid-column: span 4; }
 }
 
 /* ── MOBILE ── */
 @media (max-width: 560px) {
   #story { padding: 2.5rem 20px 3rem; }
   .story-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 100px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 55px;
     gap: 8px;
   }
-  .story-tile--wide,
-  .story-tile--big { grid-column: span 2; }
-  .story-tile--text { font-size: clamp(16px, 6vw, 22px); }
+  .story-tile-1, .story-tile-3, .story-tile-5, .story-tile-8,
+  .story-tile-10, .story-tile-12 { grid-column: span 2; grid-row: span 2; }
+  .story-tile-2, .story-tile-4, .story-tile-6, .story-tile-7,
+  .story-tile-9, .story-tile-11, .story-tile-13 { grid-column: span 4; grid-row: span 2; }
+  .story-tile--text { font-size: clamp(15px, 5vw, 20px); padding: 14px; }
 }
