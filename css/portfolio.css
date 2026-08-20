@@ -2,10 +2,6 @@
    PORTFOLIO OVERVIEW — short cards for every project, linking to the
    full project page (Rubalif, VisaTrack). Sits between About Me and the
    "How it all started" mosaic on the Home page.
-
-   Style: bold editorial numbering + a brand-color top accent per card,
-   matching the site's bold Oswald/red identity instead of a generic
-   SaaS-template card look.
 ══════════════════════════════ */
 #portfolio {
   background: #f5f3f0;
@@ -39,42 +35,23 @@
   gap: 24px;
 }
 
-/* each project card — plain <a> so the whole tile is clickable.
-   --accent is set per card (inline style) to tint the top strip,
-   number, and hover state with that project's own brand color. */
+/* each project card — plain <a> so the whole tile is clickable */
 .portfolio-card {
-  --accent: #8b0000;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background: #fff;
   border: 1px solid rgba(0,0,0,0.08);
-  border-top: 4px solid var(--accent);
-  border-radius: 4px;
-  padding: 32px 28px 28px;
-  overflow: hidden;
+  border-radius: 10px;
+  padding: 28px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .portfolio-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
 }
-
-/* big faint number in the corner — purely decorative */
-.portfolio-card-number {
-  position: absolute;
-  top: -6px;
-  right: 12px;
-  font: 700 88px/1 'Oswald', sans-serif;
-  color: var(--accent);
-  opacity: 0.07;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-.portfolio-card:hover .portfolio-card-number { opacity: 0.14; }
 
 .portfolio-card-icon {
   width: 52px;
@@ -83,56 +60,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   overflow: hidden;
   flex-shrink: 0;
 }
 .portfolio-card-icon img { width: 100%; height: 100%; object-fit: cover; }
 
 .portfolio-card h3 {
-  font: 700 26px/1.1 'Oswald', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: -0.3px;
+  font: 700 20px/1.2 'DM Sans', sans-serif;
   color: #1a202c;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 }
 
 .portfolio-card p {
   font: 400 14.5px/1.6 'DM Sans', sans-serif;
   color: #4a5568;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   flex-grow: 1;
 }
 
 .portfolio-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font: 700 13px/1 'DM Sans', sans-serif;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  transition: gap 0.2s ease;
+  font: 600 13.5px/1 'DM Sans', sans-serif;
+  color: #8b0000;
 }
-.portfolio-card:hover .portfolio-card-link { gap: 10px; }
 
 /* Trackly isn't built yet, so its card isn't a link — just a preview */
 .portfolio-card--soon {
   cursor: default;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 .portfolio-card--soon:hover {
   transform: none;
   box-shadow: none;
 }
-.portfolio-card--soon:hover .portfolio-card-number { opacity: 0.07; }
-.portfolio-card--soon .portfolio-card-link { color: #8a9ab0; }
+.portfolio-card--soon .portfolio-card-link {
+  color: #8a9ab0;
+}
 
 /* ── TABLET ── */
 @media (max-width: 900px) {
   #portfolio { padding: 3.5rem 32px; }
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
-  .portfolio-card-number { font-size: 70px; }
 }
 
 /* ── MOBILE ── */
