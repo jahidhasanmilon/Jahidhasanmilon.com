@@ -6,7 +6,6 @@
 ══════════════════════════════ */
 .site-footer {
   background: #f5f3f0;
-  border-top: 2px solid #8b0000;
   padding: 0.9rem 80px;
 }
 
@@ -28,16 +27,31 @@
 
 .site-footer-links {
   display: flex;
-  gap: 18px;
+  align-items: center;
+  gap: 16px;
 }
 
 .site-footer-links a {
-  font: 500 12px/1 'DM Sans', sans-serif;
+  display: flex;
   color: #8b0000;
-  text-decoration: none;
+  opacity: 0.75;
   transition: opacity 0.2s ease;
 }
-.site-footer-links a:hover { opacity: 0.65; }
+.site-footer-links a:hover { opacity: 1; }
+
+.site-footer-links svg {
+  width: 17px;
+  height: 17px;
+}
+/* mail icon is drawn with strokes, the logo icons are solid shapes */
+.site-footer-links svg.fi-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.site-footer-links svg.fi-fill { fill: currentColor; }
 
 /* ── MOBILE ── */
 @media (max-width: 560px) {
