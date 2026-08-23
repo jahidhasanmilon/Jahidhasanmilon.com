@@ -35,7 +35,9 @@
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* 3 per row on desktop (not 4) — future projects will wrap onto new
+     rows of 3 instead of squeezing the cards narrower each time */
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
