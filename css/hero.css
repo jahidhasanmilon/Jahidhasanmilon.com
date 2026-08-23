@@ -24,20 +24,20 @@
   justify-content: center;
   padding: 5rem 80px 6rem;
   margin: 0 auto;
-  /* opacity/transform/filter here are driven by fadeHeroOnScroll() in
-     hero.js — scale shrinks from the top so it reads as "receding"
-     rather than shrinking toward its own center */
-  transform-origin: center top;
-  will-change: opacity, transform, filter;
 }
 
-/* ── JAHID'S ── */
+/* ── JAHID'S ──
+   opacity/transform/filter on .top-name, .big-title, .script-text and
+   .bottom-row below are driven by fadeHeroOnScroll() in hero.js — each
+   one fades/lifts at its own rate on scroll for a parallax "exit", so
+   each gets its own transform-origin + will-change hint */
 .top-name {
   font: 700 italic clamp(18px, 3.2vw, 48px)/1 'Oswald', sans-serif;
   color: #8b0000;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 2px;
+  will-change: opacity, transform, filter;
 }
 
 /* ── WEB DEV ── */
@@ -49,6 +49,7 @@
   white-space: nowrap;
   transform-origin: left center;
   display: block;
+  will-change: opacity, transform, filter;
 }
 
 /* ── PORTFOLIO ── */
@@ -64,6 +65,7 @@
   color: #8b0000;
   -webkit-text-stroke: 0.5px #8b0000;
   padding-right: 4px;
+  will-change: opacity, transform, filter;
 }
 
 /* ── BOTTOM ROW ── */
@@ -72,6 +74,7 @@
   align-items: flex-end;
   justify-content: space-between;
   margin-top: clamp(10px, 2.5vw, 28px);
+  will-change: opacity, transform, filter;
 }
 
 .services {
