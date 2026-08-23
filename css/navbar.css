@@ -163,11 +163,10 @@ body { padding-top: 56px; }
 .nav-toggle { display: none; }
 
 /* ── SITE MARK (mobile/tablet only) ──
-   Small "J" badge (same mark as favicon.svg) pinned over the top-left
-   corner of the mobile header bar, so collapsed nav isn't just a bare
-   hamburger — it doubles as a Home link. Sits above .nav-toggle via
-   z-index rather than nesting inside it (a <button> can't contain an
-   <a>). */
+   Plain "J." text pinned over the top-left corner of the mobile header
+   bar, so collapsed nav isn't just a bare hamburger — it doubles as a
+   Home link. Sits above .nav-toggle via z-index rather than nesting
+   inside it (a <button> can't contain an <a>). */
 .site-mark { display: none; }
 
 /* ── MOBILE ── */
@@ -203,15 +202,17 @@ body { padding-top: 56px; }
   .site-mark {
     display: flex;
     align-items: center;
-    justify-content: center;
     position: fixed;
     top: 0; left: 0;
-    width: 52px; height: 52px;
-    padding: 13px;
+    height: 52px;
+    padding: 0 16px;
     z-index: 10001;
+    font: 700 italic 20px 'Oswald', sans-serif;
+    color: #8b0000;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
   }
-  .site-mark svg { width: 100%; height: 100%; transition: transform 0.2s ease; }
-  .site-mark:hover svg { transform: scale(1.08); }
+  .site-mark:hover { opacity: 0.7; }
 
   .navbar {
     position: fixed;
