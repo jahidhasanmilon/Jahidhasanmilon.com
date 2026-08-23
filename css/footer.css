@@ -1,11 +1,11 @@
 /* ══════════════════════════════
    SITE FOOTER — shared across every page (loaded via css/footer.css)
-   Dark navy strip with bordered square social icons, matching the
-   reference design the user provided.
+   Bordered square social icons, kept in the site's own cream/dark
+   theme (same palette as the navbar) instead of a dark navy block.
 ══════════════════════════════ */
 .site-footer {
-  background: #141c3c;
-  padding: 1.4rem 80px;
+  background: #f5f3f0;
+  padding: 1.2rem 80px;
 }
 
 .site-footer-inner {
@@ -20,7 +20,7 @@
 
 .site-footer-copy {
   font: 400 13px/1.4 'DM Sans', sans-serif;
-  color: #8b93b8;
+  color: #6b7280;
   margin: 0;
 }
 
@@ -37,15 +37,15 @@
   justify-content: center;
   width: 38px;
   height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 8px;
-  color: #8b93b8;
+  color: #4a5568;
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 .site-footer-links a:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.06);
+  color: #1a202c;
+  border-color: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .site-footer-links svg {
