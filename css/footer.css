@@ -1,9 +1,13 @@
 /* ══════════════════════════════
    SITE FOOTER — shared across every page (loaded via css/footer.css)
+   Thin strip using the site's own cream/red theme (same palette as the
+   navbar) instead of a heavy dark block, so it reads as a quiet close
+   to the page rather than a separate section.
 ══════════════════════════════ */
 .site-footer {
-  background: #1a202c;
-  padding: 2rem 80px;
+  background: #f5f3f0;
+  border-top: 2px solid #8b0000;
+  padding: 0.9rem 80px;
 }
 
 .site-footer-inner {
@@ -13,30 +17,30 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .site-footer-copy {
-  font: 400 13px/1.5 'DM Sans', sans-serif;
-  color: rgba(255, 255, 255, 0.55);
+  font: 400 12px/1.4 'DM Sans', sans-serif;
+  color: #6b7280;
   margin: 0;
 }
 
 .site-footer-links {
   display: flex;
-  gap: 24px;
+  gap: 18px;
 }
 
 .site-footer-links a {
-  font: 500 13px/1 'DM Sans', sans-serif;
-  color: rgba(255, 255, 255, 0.75);
+  font: 500 12px/1 'DM Sans', sans-serif;
+  color: #8b0000;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
-.site-footer-links a:hover { color: #fff; }
+.site-footer-links a:hover { opacity: 0.65; }
 
 /* ── MOBILE ── */
 @media (max-width: 560px) {
-  .site-footer { padding: 1.75rem 20px; }
-  .site-footer-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .site-footer { padding: 0.85rem 20px; }
+  .site-footer-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
