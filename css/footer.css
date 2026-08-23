@@ -1,0 +1,42 @@
+/* ══════════════════════════════
+   SITE FOOTER — shared across every page (loaded via css/footer.css)
+══════════════════════════════ */
+.site-footer {
+  background: #1a202c;
+  padding: 2rem 80px;
+}
+
+.site-footer-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-footer-copy {
+  font: 400 13px/1.5 'DM Sans', sans-serif;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+.site-footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.site-footer-links a {
+  font: 500 13px/1 'DM Sans', sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.site-footer-links a:hover { color: #fff; }
+
+/* ── MOBILE ── */
+@media (max-width: 560px) {
+  .site-footer { padding: 1.75rem 20px; }
+  .site-footer-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+}

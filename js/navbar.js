@@ -46,4 +46,8 @@
       });
     }
   });
+
+  // keep the footer's copyright year current without a yearly manual edit
+  const footerYear = document.getElementById('footerYear');
+  if (footerYear) footerYear.textContent = new Date().getFullYear();
 })();
