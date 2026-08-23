@@ -24,6 +24,11 @@
   justify-content: center;
   padding: 5rem 80px 6rem;
   margin: 0 auto;
+  /* opacity/transform/filter here are driven by fadeHeroOnScroll() in
+     hero.js — scale shrinks from the top so it reads as "receding"
+     rather than shrinking toward its own center */
+  transform-origin: center top;
+  will-change: opacity, transform, filter;
 }
 
 /* ── JAHID'S ── */

@@ -23,20 +23,33 @@ function runAnims() {
   });
 }
 
-// modern "fade away" effect: as the visitor scrolls down past the hero,
-// the big title/tagline gently fades and lifts out of view instead of
-// just snapping off-screen
+// modern "zoom away" effect: as the visitor scrolls past the hero, it
+// gently shrinks, fades, and softens (blur) instead of just sliding off —
+// applied to the .page wrapper, not #bigTitle, so it doesn't fight with
+// scaleBig()'s own scaleX transform on the title itself
+let heroScrollTicking = false;
 function fadeHeroOnScroll() {
   const page = document.querySelector('#home .page');
-  if (!page) return;
+  const hero = document.getElementById('home');
+  if (!page || !hero) return;
 
-  const heroHeight = document.getElementById('home').offsetHeight;
-  // fully faded by the time we've scrolled 70% of the hero's height
-  const progress = Math.min(window.scrollY / (heroHeight * 0.7), 1);
-  const fade = 1 - progress;
+  const heroHeight = hero.offsetHeight;
+  // fully faded by the time we've scrolled 65% of the hero's height
+  const progress = Math.min(window.scrollY / (heroHeight * 0.65), 1);
 
-  page.style.opacity = fade;
-  page.style.transform = `translateY(${progress * -40}px)`;
+  page.style.opacity = 1 - progress;
+  page.style.transform = `scale(${1 - progress * 0.08}) translateY(${progress * -30}px)`;
+  page.style.filter = `blur(${progress * 6}px)`;
+}
+// rAF-throttled so this runs at most once per frame instead of once per
+// scroll event (scroll can fire much faster than the screen can repaint)
+function onHeroScroll() {
+  if (heroScrollTicking) return;
+  heroScrollTicking = true;
+  requestAnimationFrame(() => {
+    fadeHeroOnScroll();
+    heroScrollTicking = false;
+  });
 }
 
 function init() {
@@ -50,4 +63,4 @@ window.addEventListener('load', init);
 // change after the fallback font swaps to 'Oswald'
 if (document.fonts) document.fonts.ready.then(scaleBig);
 window.addEventListener('resize', scaleBig);
-window.addEventListener('scroll', fadeHeroOnScroll, { passive: true });
+window.addEventListener('scroll', onHeroScroll, { passive: true });
