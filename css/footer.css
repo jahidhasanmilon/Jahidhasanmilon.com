@@ -62,6 +62,13 @@
 }
 .site-footer-links svg.fi-fill { fill: currentColor; }
 
+/* ── TABLET & MOBILE ── */
+@media (max-width: 768px) {
+  .site-footer-links { gap: 8px; }
+  .site-footer-links a { width: 30px; height: 30px; border-radius: 6px; }
+  .site-footer-links svg { width: 14px; height: 14px; }
+}
+
 /* ── MOBILE ── */
 @media (max-width: 560px) {
   .site-footer { padding: 1.25rem 20px; }
