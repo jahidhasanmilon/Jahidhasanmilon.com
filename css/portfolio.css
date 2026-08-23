@@ -56,7 +56,11 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  /* opacity here (not just transform/box-shadow) so the .reveal scroll-in
+     fade still animates smoothly — otherwise this transition list would
+     replace .reveal's and the fade would just snap in with no transition */
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.25s ease, box-shadow 0.25s ease;
 }
 .portfolio-card:hover {
   transform: translateY(-6px);
