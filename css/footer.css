@@ -33,11 +33,10 @@
 
 .site-footer-links a {
   display: flex;
-  color: #8b0000;
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
+  color: #6b7280;
+  transition: color 0.2s ease;
 }
-.site-footer-links a:hover { opacity: 1; }
+.site-footer-links a:hover { color: #1a202c; }
 
 .site-footer-links svg {
   width: 17px;
