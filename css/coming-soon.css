@@ -1,0 +1,61 @@
+/* ══════════════════════════════
+   COMING SOON — placeholder page linked from nav items that don't have
+   a real page yet (Services, Content Creation, Trackly, etc.). Swap a
+   nav link back to its real page once that page is built.
+══════════════════════════════ */
+#coming-soon {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  text-align: center;
+  padding: 4rem 24px;
+}
+
+.cs-inner {
+  max-width: 560px;
+}
+
+.cs-eyebrow {
+  font: 500 12px/1 'DM Sans', sans-serif;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #8b0000;
+  margin: 0 0 16px;
+}
+
+.cs-heading {
+  font: 700 clamp(40px, 8vw, 72px)/1 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #1a202c;
+  margin: 0 0 20px;
+}
+
+.cs-body {
+  font: 400 16px/1.7 'DM Sans', sans-serif;
+  color: #4a5568;
+  margin: 0 0 32px;
+}
+
+/* same look as .btn-primary in projects.css, kept local so this page
+   doesn't need to pull in the whole project-page stylesheet */
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: #1a202c;
+  color: #f5f3f0;
+  font: 500 15px/1 'DM Sans', sans-serif;
+  text-decoration: none;
+  border: 2px solid #1a202c;
+  transition: background 0.2s, border-color 0.2s;
+}
+.cs-back:hover { background: #8b0000; border-color: #8b0000; }
+
+/* ── MOBILE ── */
+@media (max-width: 560px) {
+  #coming-soon { padding: 3rem 20px; }
+}
